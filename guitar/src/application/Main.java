@@ -15,7 +15,7 @@ import util.Fret;
 
 /**
  * 
- * @author 周杰
+ * @author zhoujie
  *
  */
 public class Main extends Application {
