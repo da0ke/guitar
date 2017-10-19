@@ -2,7 +2,7 @@ package application;
 
 /**
  * 小星星
- * @author zhoujie
+ * @author da0ke
  *
  */
 public class LittleStar {
