@@ -1,17 +1,12 @@
 package application;
 	
-import java.util.ArrayList;
-import java.util.List;
-
 import javafx.application.Application;
 import javafx.scene.Scene;
-import javafx.scene.control.Label;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Line;
 import javafx.stage.Stage;
-import model.Note_M;
-import util.Fret;
+import util.ChordTool;
 
 /**
  * 
@@ -86,7 +81,7 @@ public class Main extends Application {
 		initView(root);
 		
 		
-		
+		ChordTool.createAm(root, 200, 200);
 
 
 		Scene scene = new Scene(root,WIDTH,HEIGHT);
