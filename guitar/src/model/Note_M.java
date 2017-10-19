@@ -1,24 +1,28 @@
 package model;
 
+import util.Fret;
+
 public class Note_M {
 	
-	public Note_M(int string, int fret) {
+	public Note_M(int string, Fret fret) {
 		super();
 		this.string = string;
 		this.fret = fret;
 	}
-	private int string;//弦号
-	private int fret;//品格
+	private int string;
+	private Fret fret;
 	public int getString() {
 		return string;
 	}
 	public void setString(int string) {
 		this.string = string;
 	}
-	public int getFret() {
+	public Fret getFret() {
 		return fret;
 	}
-	public void setFret(int fret) {
+	public void setFret(Fret fret) {
 		this.fret = fret;
 	}
+	
+	
 }
