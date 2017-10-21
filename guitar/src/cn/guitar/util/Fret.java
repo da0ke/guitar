@@ -1,4 +1,4 @@
-package util;
+package cn.guitar.util;
 
 public enum Fret {
 	Empty,Zero,First,Second,Third,Fourth,Fifth;

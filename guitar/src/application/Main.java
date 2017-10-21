@@ -1,12 +1,14 @@
 package application;
 	
+import cn.guitar.util.ChordTool;
+import cn.guitar.util.MeterTool;
+import cn.guitar.util.MyConst;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Line;
 import javafx.stage.Stage;
-import util.ChordTool;
 
 /**
  * 
@@ -31,7 +33,7 @@ public class Main extends Application {
 		
 		//起始坐标
 		int startX = 10;
-		int startY = 60;
+		int startY = 70;
 		
 		//6根弦
 		int strings = 6; 
@@ -78,14 +80,21 @@ public class Main extends Application {
 	@Override
 	public void start(Stage primaryStage) {
 		Pane root = new Pane();
-		initView(root);
+		
+		int[][] toneArray = {{4,2},{MyConst.MARK_X,MyConst.MARK_X}};
+		MeterTool.create(root, 60, 60, toneArray);
 		
 		
-		ChordTool.createAm(root, 200, 200);
+		
+		
+//		initView(root);
+//		
+//		
+//		ChordTool.createAm(root, 0, 0);
+//		ChordTool.createEm(root, 300, 300);
 
 
 		Scene scene = new Scene(root,WIDTH,HEIGHT);
-		scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 		
 		primaryStage.setTitle("guitar");
 		primaryStage.setScene(scene);

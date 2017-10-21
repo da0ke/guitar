@@ -1,6 +1,6 @@
 package model;
 
-import util.Fret;
+import cn.guitar.util.Fret;
 
 public class Note_M {
 	

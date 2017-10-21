@@ -1,4 +1,4 @@
-package util;
+package cn.guitar.util;
 
 import javafx.scene.control.Label;
 import javafx.scene.layout.Pane;
@@ -25,11 +25,21 @@ public class ChordTool {
 		int[][] markArray = {{4,3,2},{2,2,1}};
 		create(root, originX, originY, name, topArray, markArray);
 	}
+	
+	/**
+	 * Em和弦
+	 */
+	public static void createEm(Pane root, int originX, int originY) {
+		String name = "Em";
+		int[][] topArray = {{6,3,2,1},{0,0,0,0}};
+		int[][] markArray = {{5,4},{2,2}};
+		create(root, originX, originY, name, topArray, markArray);
+	}
 
 	private static void create(Pane root, int originX, int originY, String name, int[][] topArray, int[][] markArray) {
 
 		int h_unit = 8;// 水平单位
-		int v_unit = 12;// 垂直单位
+		int v_unit = 10;// 垂直单位
 
 		Label _name = new Label(name);
 		_name.setFont(Font.font(14));
@@ -49,8 +59,8 @@ public class ChordTool {
 			} else {
 				label = new Label("o");
 			}
-			label.setFont(Font.font(12));
-			label.setLayoutY(originY + 10);
+			label.setFont(Font.font(10));
+			label.setLayoutY(originY + 12);
 			label.setLayoutX(originX + (6 - topArray[0][i]) * h_unit);
 			root.getChildren().add(label);
 		}
