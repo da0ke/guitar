@@ -9,6 +9,7 @@ import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Line;
 import javafx.stage.Stage;
+import tab.LanHuaCao;
 
 /**
  * 
@@ -81,18 +82,7 @@ public class Main extends Application {
 	public void start(Stage primaryStage) {
 		Pane root = new Pane();
 		
-		int[][] toneArray = {{4,2},{MyConst.MARK_X,MyConst.MARK_X}};
-		MeterTool.create(root, 60, 60, toneArray);
-		
-		
-		
-		
-//		initView(root);
-//		
-//		
-//		ChordTool.createAm(root, 0, 0);
-//		ChordTool.createEm(root, 300, 300);
-
+		LanHuaCao.create(root);
 
 		Scene scene = new Scene(root,WIDTH,HEIGHT);
 		
