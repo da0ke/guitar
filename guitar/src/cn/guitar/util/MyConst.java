@@ -9,5 +9,4 @@ public class MyConst {
 	public static int MARK_2 = 2;
 	public static int MARK_3 = 3;
 	
-	
 }

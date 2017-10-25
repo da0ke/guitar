@@ -4,8 +4,11 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Line;
+import javafx.scene.shape.LineTo;
+import javafx.scene.shape.MoveTo;
+import javafx.scene.shape.Path;
+import javafx.scene.shape.Polyline;
 import javafx.scene.text.Font;
-import javafx.scene.text.TextAlignment;
 
 /**
  * 拍子工具类
@@ -14,6 +17,10 @@ import javafx.scene.text.TextAlignment;
  */
 public class MeterTool {
 	
+	public static final int width = 28;
+	public static final int stringGap = 13;
+	
+	public static final int strumWidth = 20;
 	
 	/**
 	 * 创建一个拍子
@@ -22,10 +29,9 @@ public class MeterTool {
 		
 		//6根弦
 		int strings = 6; 
-		int stringGap = 13;
-		int width = 14;
+		int w = width/toneArray.length;
 		for(int i=0;i<strings;i++) {
-			Line line = new Line(originX,originY+i*stringGap,originX+width*toneArray.length,originY+i*stringGap);
+			Line line = new Line(originX,originY+i*stringGap,originX+w*toneArray.length,originY+i*stringGap);
 			line.setStroke(Color.BLACK);
 			line.setStrokeWidth(0.6);
 					
@@ -54,7 +60,7 @@ public class MeterTool {
 				label.setText("");
 			}
 			label.setFont(Font.font(10));
-			label.setLayoutX(originX+(i+0.5)*width-3);
+			label.setLayoutX(originX+(i+0.5)*w-3);
 			label.setLayoutY(originY+(stringNum-1.5)*stringGap-1);
 			
 			root.getChildren().add(label);
@@ -62,12 +68,83 @@ public class MeterTool {
 		}
 		
 		//拍子
-		Line line1 = new Line(originX+0.5*width, originY+(toneArray[0][0])*stringGap+4, originX+0.5*width, originY+(7-0.5)*stringGap-1);
-		Line line2 = new Line(originX+0.5*width, originY+(7-0.5)*stringGap-1, originX+1.5*width, originY+(7-0.5)*stringGap-1);
-		Line line3 = new Line(originX+1.5*width, originY+(toneArray[1][0])*stringGap+4, originX+1.5*width, originY+(7-0.5)*stringGap-1);
-		root.getChildren().add(line1);
-		root.getChildren().add(line2);
-		root.getChildren().add(line3);
+		if(toneArray.length == 1) {
+			Line line1 = new Line(originX+0.5*w, originY+(toneArray[0][0])*stringGap+4, originX+0.5*w, originY+(7-0.5)*stringGap-1);
+			root.getChildren().add(line1);
+		} else {
+			Line line1 = new Line(originX+0.5*w, originY+(toneArray[0][0])*stringGap+4, originX+0.5*w, originY+(7-0.5)*stringGap-1);
+			Line line2 = new Line(originX+0.5*w, originY+(7-0.5)*stringGap-1, originX+1.5*w, originY+(7-0.5)*stringGap-1);
+			Line line3 = new Line(originX+1.5*w, originY+(toneArray[1][0])*stringGap+4, originX+1.5*w, originY+(7-0.5)*stringGap-1);
+			root.getChildren().add(line1);
+			root.getChildren().add(line2);
+			root.getChildren().add(line3);
+		}
+		
+	}
+	
+	/**
+	 * 扫弦
+	 */
+	public static void createStrum(Pane root, int originX, int originY, int stringStart,int stringEnd) {
+		//6根弦
+		int strings = 6; 
+		int w = width;
+		for(int i=0;i<strings;i++) {
+			Line line = new Line(originX,originY+i*stringGap,originX+w,originY+i*stringGap);
+			line.setStroke(Color.BLACK);
+			line.setStrokeWidth(0.6);
+					
+			root.getChildren().add(line);
+		}
+		
+		//扫弦
+		Path path = new Path();
+		if(stringStart < stringEnd) { //往下扫弦
+			//TODO
+		} else { //往上扫弦
+			Polyline poly = new Polyline(originX+width/2-4,originY+6,originX+width/2,originY,originX+width/2+4,originY+6);
+			root.getChildren().add(poly);
+			
+			MoveTo moveTo = new MoveTo();
+			moveTo.setX(originX+width/2);
+			moveTo.setY(originY+(stringEnd-1)*stringGap+5);
+			path.getElements().add(moveTo);
+			for(int i=0;i<11;i++) {
+				LineTo lineTo;
+				if(i%2==0) {
+					lineTo = new LineTo(originX+width/2-2,originY+(stringEnd-1)*stringGap+5+4*(i+1));
+				} else {
+					lineTo = new LineTo(originX+width/2+2,originY+(stringEnd-1)*stringGap+5+4*(i+1));
+				}
+				path.getElements().add(lineTo);
+			}
+		}
+		
+		path.setStroke(Color.BLACK);
+		path.setStrokeWidth(0.6);
+		root.getChildren().add(path);
+		
+		//拍子
+		Line line = new Line(originX+0.5*w, originY+5*stringGap+4, originX+0.5*w, originY+(7-0.5)*stringGap-1);
+		root.getChildren().add(line);
+	}
+	
+	/**
+	 * 延长拍
+	 */
+	public static void createDelay(Pane root, int originX, int originY) {
+		//6根弦
+		int strings = 6; 
+		int w = width;
+		for(int i=0;i<strings;i++) {
+			Line line = new Line(originX,originY+i*stringGap,originX+w,originY+i*stringGap);
+			line.setStroke(Color.BLACK);
+			line.setStrokeWidth(0.6);
+					
+			root.getChildren().add(line);
+		}
+		
+		
 	}
 	
 }

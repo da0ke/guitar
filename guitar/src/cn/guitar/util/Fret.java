@@ -1,5 +1,10 @@
 package cn.guitar.util;
 
+/**
+ * 品格
+ * @author da0ke
+ *
+ */
 public enum Fret {
 	Empty,Zero,First,Second,Third,Fourth,Fifth;
 
