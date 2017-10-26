@@ -145,6 +145,11 @@ public class MeterTool {
 		}
 		
 		
+		
+		//延长音
+		Line line = new Line(originX+w/2-4,originY+2.5*stringGap,originX+w/2+4,originY+2.5*stringGap);
+		root.getChildren().add(line);
 	}
+	
 	
 }
