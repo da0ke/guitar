@@ -1,5 +1,8 @@
 package tab;
 
+import java.util.List;
+
+import cn.guitar.util.FileIOUtils;
 import cn.guitar.util.MeterTool;
 import cn.guitar.util.MyConst;
 import cn.guitar.util.Section;
@@ -14,7 +17,20 @@ import javafx.scene.layout.Pane;
  */
 public class LanHuaCao {
 	
+//	public static void main(String[] args) {
+//		init();
+//	}
+	
 	public static void init() {
+		String classPath = LanHuaCao.class.getResource("").getPath();
+		List<String> list = FileIOUtils.readFile2List(classPath+"lanhuacao");
+		for(String line : list) {
+			if(line.contains(":")) { //是否有和弦
+				String[] arr = line.split(":");
+				String chord = arr[0];
+				
+			}
+		}
 		
 	}
 	

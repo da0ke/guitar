@@ -19,7 +19,6 @@ public class MeterTool {
 	
 	public static final int width = 28;
 	public static final int stringGap = 13;
-	
 	public static final int strumWidth = 20;
 	
 	/**
@@ -42,6 +41,8 @@ public class MeterTool {
 		for(int i=0;i<toneArray.length;i++) {
 			int stringNum = toneArray[i][0];
 			int markNum = toneArray[i][1];
+			
+			System.out.println(stringNum+":"+markNum);
 			
 			Label label = new Label();
 			if(markNum == MyConst.MARK_X) {
