@@ -17,10 +17,6 @@ import javafx.scene.layout.Pane;
  */
 public class LanHuaCao {
 	
-//	public static void main(String[] args) {
-//		init();
-//	}
-	
 	public static void init() {
 		String classPath = LanHuaCao.class.getResource("").getPath();
 		List<String> list = FileIOUtils.readFile2List(classPath+"lanhuacao");
@@ -38,10 +34,6 @@ public class LanHuaCao {
 		int x = 60;
 		int y = 60;
 		int increase = MeterTool.width;
-		
-		
-		
-		
 		
 		MeterTool.create(root, x, y, new int[][]{{4,MyConst.MARK_X},{2,MyConst.MARK_X}});
 		x += increase;

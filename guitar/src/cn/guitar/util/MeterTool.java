@@ -42,8 +42,6 @@ public class MeterTool {
 			int stringNum = toneArray[i][0];
 			int markNum = toneArray[i][1];
 			
-			System.out.println(stringNum+":"+markNum);
-			
 			Label label = new Label();
 			if(markNum == MyConst.MARK_X) {
 				label.setText("x");
@@ -57,6 +55,10 @@ public class MeterTool {
 				label.setText("2");
 			} else if(markNum == MyConst.MARK_3) {
 				label.setText("3");
+			} else if(markNum == MyConst.MARK_4) {
+				label.setText("4");
+			} else if(markNum == MyConst.MARK_5) {
+				label.setText("5");
 			} else {
 				label.setText("");
 			}

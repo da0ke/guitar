@@ -4,12 +4,10 @@ import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
-import tab.LittleStar;
 
 /**
  * 
  * @author da0ke
- * 
  *
  */
 public class Main extends Application {
@@ -22,9 +20,7 @@ public class Main extends Application {
 	public void start(Stage primaryStage) {
 		Pane root = new Pane();
 		
-		
-		
-		LittleStar.create(root);
+		Tab.create(root, "lanhuacao");
 
 		Scene scene = new Scene(root,WIDTH,HEIGHT);
 		

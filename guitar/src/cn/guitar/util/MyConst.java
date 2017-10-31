@@ -2,6 +2,9 @@ package cn.guitar.util;
 
 public class MyConst {
 	
+	
+	
+	
 	public static int TYPE_TONE = 1;
 	public static int TYPE_SECTION = 2;
 	public static int TYPE_LOOP = 3;

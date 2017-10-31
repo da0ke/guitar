@@ -5,22 +5,8 @@ Am:4x,2x
 section
 20
 30
-5->1
-Am:delay
+Am:5->1
+delay
 loopStart
-5x,3x
-2x,3x
-1x,3x
-2x,3x
-section
-5x,3x
-2x,3x
-1x,3x
-2x,3x
-section
-5x,3x
-2x,3x
-1x,3x
-2x,3x
-section
+
 
