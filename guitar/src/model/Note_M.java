@@ -1,27 +1,36 @@
 package model;
 
-import cn.guitar.util.Fret;
-
 public class Note_M {
 	
-	public Note_M(int string, Fret fret) {
-		super();
-		this.string = string;
-		this.fret = fret;
+	public Note_M(int stringNum, String mark) {
+		this.stringNum = stringNum;
+		this.mark = mark;
 	}
-	private int string;
-	private Fret fret;
-	public int getString() {
-		return string;
+	private int stringNum;
+	private String mark;
+	/**
+	 * @return the stringNum
+	 */
+	public int getStringNum() {
+		return stringNum;
 	}
-	public void setString(int string) {
-		this.string = string;
+	/**
+	 * @param stringNum the stringNum to set
+	 */
+	public void setStringNum(int stringNum) {
+		this.stringNum = stringNum;
 	}
-	public Fret getFret() {
-		return fret;
+	/**
+	 * @return the mark
+	 */
+	public String getMark() {
+		return mark;
 	}
-	public void setFret(Fret fret) {
-		this.fret = fret;
+	/**
+	 * @param mark the mark to set
+	 */
+	public void setMark(String mark) {
+		this.mark = mark;
 	}
 	
 	
