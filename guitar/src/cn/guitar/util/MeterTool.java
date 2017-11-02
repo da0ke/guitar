@@ -20,7 +20,7 @@ import model.Note_M;
  */
 public class MeterTool {
 	
-	public static final int width = 28;
+	public static final int width = 30;
 	public static final int stringGap = 13;
 	public static final int strumWidth = 20;
 	
