@@ -1,5 +1,10 @@
 package model;
 
+/**
+ * 
+ * @author da0ke
+ *
+ */
 public class Note_M {
 	
 	public Note_M(int stringNum, String mark) {

@@ -1,5 +1,10 @@
 package cn.guitar.util;
 
+/**
+ * 
+ * @author da0ke
+ *
+ */
 public class MyConst {
 	
 	

@@ -6,6 +6,15 @@ package cn.guitar.util;
  *
  */
 public enum Fret {
+	/**
+	 * Empty：空弦
+	 * Zero：不按品
+	 * First：1品
+	 * Second：2品
+	 * Third：3品
+	 * Fourth：4品
+	 * Fifth：5品
+	 */
 	Empty,Zero,First,Second,Third,Fourth,Fifth;
 
 	@Override

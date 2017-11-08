@@ -37,20 +37,21 @@ public class ChordTool {
 	}
 
 	private static void create(Pane root, int originX, int originY, String name, int[][] topArray, int[][] markArray) {
+		// 水平单位
+		int hUnit = 8;
+		// 垂直单位
+		int vUnit = 10;
 
-		int h_unit = 8;// 水平单位
-		int v_unit = 10;// 垂直单位
-
-		Label _name = new Label(name);
-		_name.setFont(Font.font(14));
+		Label nameLabel = new Label(name);
+		nameLabel.setFont(Font.font(14));
 		if (name.length() == 1) {
-			_name.setLayoutX(originX + 18);
+			nameLabel.setLayoutX(originX + 18);
 		} else {
-			_name.setLayoutX(originX + 13);
+			nameLabel.setLayoutX(originX + 13);
 		}
 
-		_name.setLayoutY(originY);
-		root.getChildren().add(_name);
+		nameLabel.setLayoutY(originY);
+		root.getChildren().add(nameLabel);
 
 		for (int i = 0; i < topArray[0].length; i++) {
 			Label label;
@@ -61,7 +62,7 @@ public class ChordTool {
 			}
 			label.setFont(Font.font(10));
 			label.setLayoutY(originY + 12);
-			label.setLayoutX(originX + (6 - topArray[0][i]) * h_unit);
+			label.setLayoutX(originX + (6 - topArray[0][i]) * hUnit);
 			root.getChildren().add(label);
 		}
 
@@ -69,14 +70,14 @@ public class ChordTool {
 		int y = originY + 24;
 		int x = originX + 4;
 		for (int i = 0; i < 4; i++) {
-			Line line = new Line(x, y + i * v_unit, x + 5 * h_unit, y + i * v_unit);
+			Line line = new Line(x, y + i * vUnit, x + 5 * hUnit, y + i * vUnit);
 			line.setStroke(Color.BLACK);
 			line.setStrokeWidth(0.6);
 			root.getChildren().add(line);
 		}
 		// 竖线
 		for (int i = 0; i < 6; i++) {
-			Line line = new Line(x + i * h_unit, y, x + i * h_unit, y + 3 * v_unit);
+			Line line = new Line(x + i * hUnit, y, x + i * hUnit, y + 3 * vUnit);
 			line.setStroke(Color.BLACK);
 			line.setStrokeWidth(0.6);
 			root.getChildren().add(line);
@@ -84,7 +85,7 @@ public class ChordTool {
 
 		// 标记
 		for (int i = 0; i < markArray[0].length; i++) {
-			Circle circle = new Circle(x + h_unit * (6 - markArray[0][i]), y + v_unit * (markArray[1][i] - 0.5), 3,
+			Circle circle = new Circle(x + hUnit * (6 - markArray[0][i]), y + vUnit * (markArray[1][i] - 0.5), 3,
 					Color.BLACK);
 			root.getChildren().add(circle);
 		}

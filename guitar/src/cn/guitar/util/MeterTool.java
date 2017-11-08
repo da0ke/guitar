@@ -20,9 +20,9 @@ import model.Note_M;
  */
 public class MeterTool {
 	
-	public static final int width = 30;
-	public static final int stringGap = 13;
-	public static final int strumWidth = 20;
+	public static final int WIDTH = 30;
+	public static final int STRING_GAP = 13;
+	public static final int STRUM_WIDTH = 20;
 	
 	/**
 	 * 创建一个拍子
@@ -31,9 +31,9 @@ public class MeterTool {
 		
 		//6根弦
 		int strings = 6; 
-		int w = width/toneArray.length;
+		int w = WIDTH/toneArray.length;
 		for(int i=0;i<strings;i++) {
-			Line line = new Line(originX,originY+i*stringGap,originX+w*toneArray.length,originY+i*stringGap);
+			Line line = new Line(originX,originY+i*STRING_GAP,originX+w*toneArray.length,originY+i*STRING_GAP);
 			line.setStroke(Color.BLACK);
 			line.setStrokeWidth(0.6);
 					
@@ -67,7 +67,7 @@ public class MeterTool {
 			}
 			label.setFont(Font.font(10));
 			label.setLayoutX(originX+(i+0.5)*w-3);
-			label.setLayoutY(originY+(stringNum-1.5)*stringGap-1);
+			label.setLayoutY(originY+(stringNum-1.5)*STRING_GAP-1);
 			
 			root.getChildren().add(label);
 			
@@ -75,12 +75,12 @@ public class MeterTool {
 		
 		//拍子
 		if(toneArray.length == 1) {
-			Line line1 = new Line(originX+0.5*w, originY+(toneArray[0][0])*stringGap+4, originX+0.5*w, originY+(7-0.5)*stringGap-1);
+			Line line1 = new Line(originX+0.5*w, originY+(toneArray[0][0])*STRING_GAP+4, originX+0.5*w, originY+(7-0.5)*STRING_GAP-1);
 			root.getChildren().add(line1);
 		} else {
-			Line line1 = new Line(originX+0.5*w, originY+(toneArray[0][0])*stringGap+4, originX+0.5*w, originY+(7-0.5)*stringGap-1);
-			Line line2 = new Line(originX+0.5*w, originY+(7-0.5)*stringGap-1, originX+1.5*w, originY+(7-0.5)*stringGap-1);
-			Line line3 = new Line(originX+1.5*w, originY+(toneArray[1][0])*stringGap+4, originX+1.5*w, originY+(7-0.5)*stringGap-1);
+			Line line1 = new Line(originX+0.5*w, originY+(toneArray[0][0])*STRING_GAP+4, originX+0.5*w, originY+(7-0.5)*STRING_GAP-1);
+			Line line2 = new Line(originX+0.5*w, originY+(7-0.5)*STRING_GAP-1, originX+1.5*w, originY+(7-0.5)*STRING_GAP-1);
+			Line line3 = new Line(originX+1.5*w, originY+(toneArray[1][0])*STRING_GAP+4, originX+1.5*w, originY+(7-0.5)*STRING_GAP-1);
 			root.getChildren().add(line1);
 			root.getChildren().add(line2);
 			root.getChildren().add(line3);
@@ -95,9 +95,9 @@ public class MeterTool {
 		
 		//6根弦
 		int strings = 6; 
-		int w = width/noteList.size();
+		int w = WIDTH/noteList.size();
 		for(int i=0;i<strings;i++) {
-			Line line = new Line(originX,originY+i*stringGap,originX+w*noteList.size(),originY+i*stringGap);
+			Line line = new Line(originX,originY+i*STRING_GAP,originX+w*noteList.size(),originY+i*STRING_GAP);
 			line.setStroke(Color.BLACK);
 			line.setStrokeWidth(0.6);
 					
@@ -132,7 +132,7 @@ public class MeterTool {
 			}
 			label.setFont(Font.font(10));
 			label.setLayoutX(originX+(i+0.5)*w-3);
-			label.setLayoutY(originY+(stringNum-1.5)*stringGap-1);
+			label.setLayoutY(originY+(stringNum-1.5)*STRING_GAP-1);
 			
 			root.getChildren().add(label);
 			
@@ -140,12 +140,12 @@ public class MeterTool {
 		
 		//拍子
 		if(noteList.size() == 1) {
-			Line line1 = new Line(originX+0.5*w, originY+(noteList.get(0).getStringNum())*stringGap+4, originX+0.5*w, originY+(7-0.5)*stringGap-1);
+			Line line1 = new Line(originX+0.5*w, originY+(noteList.get(0).getStringNum())*STRING_GAP+4, originX+0.5*w, originY+(7-0.5)*STRING_GAP-1);
 			root.getChildren().add(line1);
 		} else {
-			Line line1 = new Line(originX+0.5*w, originY+(noteList.get(0).getStringNum())*stringGap+4, originX+0.5*w, originY+(7-0.5)*stringGap-1);
-			Line line2 = new Line(originX+0.5*w, originY+(7-0.5)*stringGap-1, originX+1.5*w, originY+(7-0.5)*stringGap-1);
-			Line line3 = new Line(originX+1.5*w, originY+(noteList.get(1).getStringNum())*stringGap+4, originX+1.5*w, originY+(7-0.5)*stringGap-1);
+			Line line1 = new Line(originX+0.5*w, originY+(noteList.get(0).getStringNum())*STRING_GAP+4, originX+0.5*w, originY+(7-0.5)*STRING_GAP-1);
+			Line line2 = new Line(originX+0.5*w, originY+(7-0.5)*STRING_GAP-1, originX+1.5*w, originY+(7-0.5)*STRING_GAP-1);
+			Line line3 = new Line(originX+1.5*w, originY+(noteList.get(1).getStringNum())*STRING_GAP+4, originX+1.5*w, originY+(7-0.5)*STRING_GAP-1);
 			root.getChildren().add(line1);
 			root.getChildren().add(line2);
 			root.getChildren().add(line3);
@@ -159,9 +159,9 @@ public class MeterTool {
 	public static void createStrum(Pane root, int originX, int originY, int stringStart,int stringEnd) {
 		//6根弦
 		int strings = 6; 
-		int w = width;
+		int w = WIDTH;
 		for(int i=0;i<strings;i++) {
-			Line line = new Line(originX,originY+i*stringGap,originX+w,originY+i*stringGap);
+			Line line = new Line(originX,originY+i*STRING_GAP,originX+w,originY+i*STRING_GAP);
 			line.setStroke(Color.BLACK);
 			line.setStrokeWidth(0.6);
 					
@@ -170,22 +170,23 @@ public class MeterTool {
 		
 		//扫弦
 		Path path = new Path();
-		if(stringStart < stringEnd) { //往下扫弦
+		//往下扫弦
+		if(stringStart < stringEnd) { 
 			//TODO
 		} else { //往上扫弦
-			Polyline poly = new Polyline(originX+width/2-4,originY+6,originX+width/2,originY,originX+width/2+4,originY+6);
+			Polyline poly = new Polyline(originX+WIDTH/2-4,originY+6,originX+WIDTH/2,originY,originX+WIDTH/2+4,originY+6);
 			root.getChildren().add(poly);
 			
 			MoveTo moveTo = new MoveTo();
-			moveTo.setX(originX+width/2);
-			moveTo.setY(originY+(stringEnd-1)*stringGap+5);
+			moveTo.setX(originX+WIDTH/2);
+			moveTo.setY(originY+(stringEnd-1)*STRING_GAP+5);
 			path.getElements().add(moveTo);
 			for(int i=0;i<11;i++) {
 				LineTo lineTo;
 				if(i%2==0) {
-					lineTo = new LineTo(originX+width/2-2,originY+(stringEnd-1)*stringGap+5+4*(i+1));
+					lineTo = new LineTo(originX+WIDTH/2-2,originY+(stringEnd-1)*STRING_GAP+5+4*(i+1));
 				} else {
-					lineTo = new LineTo(originX+width/2+2,originY+(stringEnd-1)*stringGap+5+4*(i+1));
+					lineTo = new LineTo(originX+WIDTH/2+2,originY+(stringEnd-1)*STRING_GAP+5+4*(i+1));
 				}
 				path.getElements().add(lineTo);
 			}
@@ -196,7 +197,7 @@ public class MeterTool {
 		root.getChildren().add(path);
 		
 		//拍子
-		Line line = new Line(originX+0.5*w, originY+5*stringGap+4, originX+0.5*w, originY+(7-0.5)*stringGap-1);
+		Line line = new Line(originX+0.5*w, originY+5*STRING_GAP+4, originX+0.5*w, originY+(7-0.5)*STRING_GAP-1);
 		root.getChildren().add(line);
 	}
 	
@@ -206,9 +207,9 @@ public class MeterTool {
 	public static void createDelay(Pane root, int originX, int originY) {
 		//6根弦
 		int strings = 6; 
-		int w = width;
+		int w = WIDTH;
 		for(int i=0;i<strings;i++) {
-			Line line = new Line(originX,originY+i*stringGap,originX+w,originY+i*stringGap);
+			Line line = new Line(originX,originY+i*STRING_GAP,originX+w,originY+i*STRING_GAP);
 			line.setStroke(Color.BLACK);
 			line.setStrokeWidth(0.6);
 					
@@ -218,7 +219,7 @@ public class MeterTool {
 		
 		
 		//延长音
-		Line line = new Line(originX+w/2-4,originY+2.5*stringGap,originX+w/2+4,originY+2.5*stringGap);
+		Line line = new Line(originX+w/2-4,originY+2.5*STRING_GAP,originX+w/2+4,originY+2.5*STRING_GAP);
 		root.getChildren().add(line);
 	}
 	
