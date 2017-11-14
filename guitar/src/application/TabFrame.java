@@ -1,8 +1,8 @@
 package application;
 
+import cn.guitar.util.Tab;
 import javafx.scene.Scene;
 import javafx.scene.layout.Pane;
-import tab.Tab;
 
 /**
  * @author da0ke

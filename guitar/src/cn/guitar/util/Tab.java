@@ -1,14 +1,8 @@
-package tab;
+package cn.guitar.util;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import cn.guitar.util.ChordTool;
-import cn.guitar.util.FileIoUtils;
-import cn.guitar.util.MeterTool;
-import cn.guitar.util.MyConst;
-import cn.guitar.util.Section;
-import cn.guitar.util.SectionTool;
 import javafx.scene.layout.Pane;
 import model.Note_M;
 

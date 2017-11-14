@@ -29,9 +29,11 @@ public class Main extends Application {
 		button.setPrefWidth(100);
 		button.setPrefHeight(40);
 		root.setCenter(button);
-		
+	
 		FileChooser fileChooser = new FileChooser();
 		fileChooser.setTitle("选择曲谱文件");
+		String path = System.getProperty("user.dir")+"/src/tab/";
+		fileChooser.setInitialDirectory(new File(path));
 		
 		Scene scene = new Scene(root,WIDTH,HEIGHT);
 		
