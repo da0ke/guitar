@@ -47,7 +47,7 @@ public class Main extends Application {
 			public void handle(ActionEvent event) {
 				File file = fileChooser.showOpenDialog(primaryStage);
 				if(file != null) {
-					new TabFrame(scene,file.getAbsolutePath());
+					new TabFrame(primaryStage,scene,file.getAbsolutePath());
 				}
 			}
 		});

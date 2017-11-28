@@ -2,8 +2,8 @@ package cn.guitar.util;
 
 import java.util.ArrayList;
 import java.util.List;
-
 import javafx.scene.layout.Pane;
+import javafx.stage.Stage;
 import model.Note_M;
 
 /**
@@ -12,7 +12,7 @@ import model.Note_M;
  */
 public class Tab {
 	
-	public static void create(Pane root,String tabFile) {
+	public static void create(Stage stage,Pane root,String tabFile) {
 		int x = 60;
 		int y = 60;
 		int increase = MeterTool.WIDTH;
@@ -21,10 +21,21 @@ public class Tab {
 		
 		List<String> list = FileIoUtils.readFile2List(tabFile);
 		for(String line : list) {
+			//空白行跳过
 			if("".equals(line.trim())) {
 				continue;
-			} 
+			}
 			
+			//曲谱名
+			if(line.startsWith("title=")) {
+				String title = line.substring(6);
+				
+				stage.setTitle(title);
+				
+				continue;
+			}
+			
+			//和弦
 			if(line.contains(":")) {
 				String[] arr = line.split(":");
 				String chord = arr[0];

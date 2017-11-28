@@ -3,6 +3,7 @@ package application;
 import cn.guitar.util.Tab;
 import javafx.scene.Scene;
 import javafx.scene.layout.Pane;
+import javafx.stage.Stage;
 
 /**
  * @author da0ke
@@ -10,10 +11,10 @@ import javafx.scene.layout.Pane;
  */
 public class TabFrame {
 	
-	public TabFrame(Scene scene,String tabFile) {
+	public TabFrame(Stage stage,Scene scene,String tabFile) {
 		Pane root = new Pane();
 		
-		Tab.create(root, tabFile);
+		Tab.create(stage,root, tabFile);
 
 		scene.setRoot(root);
 	}
